@@ -73,23 +73,26 @@ command! W write
 
 " remap ":Q" to ":q" -- no more nonsensical quitting mishaps
 command! Q quit
+
+
 " Autocomplete for Typical Special Characters
 
+" Match Brackets -- quick solution but not necessarily intelligent (remaps all single entries to the pair entries instead)
 " Single Keypress will write out the pair of characters (Ex. [] instead of [ for brackets)
 " Double Keypress will write out just the single character (Ex. [ instead of [[ for brackets)
-inoremap { {}<left>
-inoremap {{ {
-inoremap {} {}
-inoremap [ []<left>
-inoremap [[ [
-inoremap [] []
-inoremap ( ()<left>
-inoremap (( (
-inoremap () ()
-inoremap " ""<left>
-inoremap "" ""
-inoremap ' ''<left>
-inoremap '' ''
+"inoremap { {}<left>
+"inoremap {{ {
+"inoremap {} {}
+"inoremap [ []<left>
+"inoremap [[ [
+"inoremap [] []
+"inoremap ( ()<left>
+"inoremap (( (
+"inoremap () ()
+"inoremap " ""<left>
+"inoremap "" ""
+"inoremap ' ''<left>
+"inoremap '' ''
 
 
 
@@ -114,9 +117,15 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter() 
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif "autoresize as per- https://github.com/junegunn/goyo.vim/issues/159
 
-let g:goyo_height="85%"
-let g:goyo_width="60%"
+let g:goyo_height="100%"
+let g:goyo_width="80%"
+
+
+" Pear Tree- https://github.com/tmsvg/pear-tree
+Plug 'tmsvg/pear-tree' "autocomplete for all brackets, paranethesis and stuff
+
 
 call plug#end()
 " End PlugIn Section -- need call the end() func to get all loaded in

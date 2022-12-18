@@ -59,7 +59,7 @@ hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=
 hi Todo term=standout ctermfg=0 ctermbg=3 guifg=Blue guibg=Yellow
 
 
-" Remapping the Default highlight colors, not nice to view w Catppuccin -- used heavily in Goyo
+" Remapping the Default highlight colors, not nice to view w Catppuccin
 hi clear SpellBad "mispelled words
 hi SpellBad cterm=underline,bold ctermfg=Red
 hi clear SpellRare "rare word, hardly ever used
@@ -70,4 +70,3 @@ hi clear SpellLocal "word that is recognized as being used in a diff region, oth
 hi SpellLocal cterm=underline,bold ctermfg=Blue
 
 hi Search ctermfg=Black "defaults to white, very painful to view w Pastel Catppuccin
-
