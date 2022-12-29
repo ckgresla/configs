@@ -62,6 +62,9 @@ hi User0 guifg=#ffffff  guibg=#094afe
 " Set ink Syntax Highlighting -- TheSephist's programming lang
 au BufNewFile,BufRead *.ink set filetype=ink
 
+" Prevent Markdown Errors for Underscores, as per- https://stackoverflow.com/questions/19137601/turn-off-highlighting-a-certain-pattern-in-vim
+autocmd Syntax markdown syn match markdownIgnore "_"
+
 
 " KeyBindings
 
