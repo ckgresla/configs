@@ -10,6 +10,7 @@ set hlsearch "highlights all occurences of word being searched for (could use "h
 set ignorecase "ignore casing on word search (could also use "ic" instead of "ignorecase")
 set smartindent "magic to smartly indent files
 set textwidth=0 "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
+set wrap
 
 
 
