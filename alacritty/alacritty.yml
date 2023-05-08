@@ -23,7 +23,7 @@ window:
   #Full has all window decorations (regular MacOS style), buttonless has no decorations and works on BigSur ["full", "none", "buttonless"]
 
   # Background Opacity
-  #opacity: .99 #if commented out, set to 100%
+  #opacity: .9 #if commented out, set to 100%
 
 
 font:
@@ -74,5 +74,25 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xF8BD96' }
     - { index: 17, color: '0xF5E0DC' }
+
+
+# Remapping keys for better tmux'in on MacOS, as per- https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux/
+key_bindings:
+  # - { key: Up, mods: Control|Shift, chars: "^[[A]]" }
+  - { key: Return, mods: Control|Shift, chars: "\x02c" } # create a new tmux window
+  - { key: Back, mods: Control|Shift, chars: "\x02x" } # kill the current pane (in tmux)
+  - { key: Comma, mods: Control|Shift, chars: "\x02," } # rename the current tmux window
+  - { key: Right, mods: Control|Shift, chars: "\x02n" } # switch to next tmux window
+  - { key: Left, mods: Control|Shift, chars: "\x02p" } # switch to previous tmux window
+
+  - { key: Key1, mods: Command, chars: "\x021" } # select tmux window 1
+  - { key: Key2, mods: Command, chars: "\x022" } #                ... 2
+  - { key: Key3, mods: Command, chars: "\x023" } #                ... 3
+  - { key: Key4, mods: Command, chars: "\x024" } #                ... 4
+  - { key: Key5, mods: Command, chars: "\x025" } #                ... 5
+  - { key: Key6, mods: Command, chars: "\x026" } #                ... 6
+  - { key: Key7, mods: Command, chars: "\x027" } #                ... 7
+  - { key: Key8, mods: Command, chars: "\x028" } #                ... 8
+  - { key: Key9, mods: Command, chars: "\x029" } #                ... 9
 
 
