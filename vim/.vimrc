@@ -20,7 +20,7 @@ set wrap
 " Config Catppuccin Colors -- more remappings done in colorscheme file (for highlighted words, etc.)
 colorscheme CKG-VimColorScheme
 set termguicolors
-
+" comment out the above if `termguicolors` is set on local machine, avoids the peachpuff background color issue
 
 
 
