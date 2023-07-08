@@ -1,0 +1,8 @@
+# Creating a Colorscheme w the GUI
+
+fiddling around with colorscheme editing through `.vim` files is mid. Better to look @ the changes you make with a graphical editor like [Pinto](https://pintovim.dev/) to confirm that changes are to your liking.
+
+I used this platform to create the `readability.vim` scheme in this dir, which can be referenced by adding the colorscheme to the `~/.vim/colors` dir and referencing the colorscheme in your `.vimrc`
++ pinto also lets you save state, by exporting a JSON of the current configuration with which we can load in the colorscheme to the Web UI at a later time, very nice. 
+
+
