@@ -16,28 +16,28 @@ set t_Co=256
 
 " json
 
-hi jsonNoise              guisp=NONE guifg=#F5C2E7 guibg=#1c1c1c ctermfg=218  ctermbg=234 gui=NONE cterm=NONE
-hi jsonKeywordMatch       guisp=NONE guifg=#F5C2E7 guibg=#1c1c1c ctermfg=218  ctermbg=234 gui=NONE cterm=NONE
-hi jsonKeyword            guisp=NONE guifg=#D9E0EE guibg=#1c1c1c ctermfg=254  ctermbg=234 gui=NONE cterm=NONE
-hi jsonStringMatch        guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  ctermbg=234 gui=NONE cterm=NONE
-hi jsonString             guisp=NONE guifg=#ABE9B3 guibg=#1c1c1c ctermfg=151  ctermbg=234 gui=NONE cterm=NONE
-hi jsonStringSQError      guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonEscape             guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  ctermbg=234 gui=NONE cterm=NONE
-hi jsonNumber             guisp=NONE guifg=#96CDFB guibg=#1c1c1c ctermfg=117  ctermbg=234 gui=NONE cterm=NONE
-hi jsonNoQuotesError      guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonTripleQuotesError  guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonNumError           guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonCommentError       guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonSemicolonError     guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonTrailingCommaError guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonMissingCommaError  guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  ctermbg=234 gui=NONE cterm=NONE
-hi jsonPadding            guisp=NONE guifg=NONE    guibg=#1c1c1c ctermfg=NONE ctermbg=234 gui=NONE cterm=NONE
-hi jsonBoolean            guisp=NONE guifg=#C9CBFF guibg=#1c1c1c ctermfg=189  ctermbg=234 gui=NONE cterm=NONE
-hi jsonFold               guisp=NONE guifg=#6E6C7E guibg=#1c1c1c ctermfg=243  ctermbg=234 gui=NONE cterm=NONE
-hi jsonTest               guisp=NONE guifg=NONE    guibg=#1c1c1c ctermfg=NONE ctermbg=234 gui=NONE cterm=NONE
-hi jsonBraces             guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  ctermbg=234 gui=NONE cterm=NONE
-hi jsonNull               guisp=NONE guifg=#96CDFB guibg=#1c1c1c ctermfg=117  ctermbg=234 gui=NONE cterm=NONE
-hi jsonQuote              guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  ctermbg=234 gui=NONE cterm=NONE
+hi jsonNoise              guisp=NONE guifg=#F5C2E7 guibg=#1c1c1c ctermfg=218  gui=NONE cterm=NONE
+hi jsonKeywordMatch       guisp=NONE guifg=#F5C2E7 guibg=#1c1c1c ctermfg=218  gui=NONE cterm=NONE
+hi jsonKeyword            guisp=NONE guifg=#D9E0EE guibg=#1c1c1c ctermfg=254  gui=NONE cterm=NONE
+hi jsonStringMatch        guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  gui=NONE cterm=NONE
+hi jsonString             guisp=NONE guifg=#ABE9B3 guibg=#1c1c1c ctermfg=151  gui=NONE cterm=NONE
+hi jsonStringSQError      guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonEscape             guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  gui=NONE cterm=NONE
+hi jsonNumber             guisp=NONE guifg=#96CDFB guibg=#1c1c1c ctermfg=117  gui=NONE cterm=NONE
+hi jsonNoQuotesError      guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonTripleQuotesError  guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonNumError           guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonCommentError       guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonSemicolonError     guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonTrailingCommaError guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonMissingCommaError  guisp=NONE guifg=#F28FAD guibg=#1c1c1c ctermfg=211  gui=NONE cterm=NONE
+hi jsonPadding            guisp=NONE guifg=NONE    guibg=#1c1c1c ctermfg=NONE gui=NONE cterm=NONE
+hi jsonBoolean            guisp=NONE guifg=#C9CBFF guibg=#1c1c1c ctermfg=189  gui=NONE cterm=NONE
+hi jsonFold               guisp=NONE guifg=#6E6C7E guibg=#1c1c1c ctermfg=243  gui=NONE cterm=NONE
+hi jsonTest               guisp=NONE guifg=NONE    guibg=#1c1c1c ctermfg=NONE gui=NONE cterm=NONE
+hi jsonBraces             guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  gui=NONE cterm=NONE
+hi jsonNull               guisp=NONE guifg=#96CDFB guibg=#1c1c1c ctermfg=117  gui=NONE cterm=NONE
+hi jsonQuote              guisp=NONE guifg=#FAE3B0 guibg=#1c1c1c ctermfg=223  gui=NONE cterm=NONE
 
 " major
 
