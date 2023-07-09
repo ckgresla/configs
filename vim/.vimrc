@@ -3,6 +3,7 @@
 set ts=4 sw=4
 
 syntax on " Syntax highlighting
+
 set showmatch " Shows matching brackets
 set ruler " Always shows location in file (line#)
 set smarttab " Autotabs for certain code
@@ -17,10 +18,13 @@ set wrap
 
 "colorscheme peachpuff "disgusting on normal (somehow theme didn't set bg correctly before Ventura update)
 
-" Config Catppuccin Colors -- more remappings done in colorscheme file (for highlighted words, etc.)
-colorscheme CKG-VimColorScheme
-set termguicolors
-" comment out the above if `termguicolors` is set on local machine, avoids the peachpuff background color issue
+" Custom Colorscheme
+" colorscheme CKG-VimColorScheme  "hack on the peachpuff colorscheme
+colorscheme readability " custom theme made via online GUI
+
+" set termguicolors
+" comment out the above if `termguicolors` is set on my Intel Macbook, avoids the peachpuff background color issue
+" for some reason setting termguicolors breaks colors in alacritty on M1 chips...
 
 
 

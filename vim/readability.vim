@@ -95,6 +95,9 @@ hi clear SpellLocal "word that is recognized as being used in a diff region, oth
 hi SpellLocal cterm=underline,bold ctermfg=Blue
 
 hi Search ctermfg=Black "defaults to white, very painful to view w Pastel Catppuccin
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta 
+	" color of matching paranethsis, good to change from other colors to see where a brace ought math
+
 
 
 
