@@ -94,9 +94,13 @@ hi SpellCap cterm=underline,bold ctermfg=Yellow
 hi clear SpellLocal "word that is recognized as being used in a diff region, other lang
 hi SpellLocal cterm=underline,bold ctermfg=Blue
 
+" CKG Customs -- stuff not configured in pinto but still want to keep
 hi Search ctermfg=Black "defaults to white, very painful to view w Pastel Catppuccin
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta 
 	" color of matching paranethsis, good to change from other colors to see where a brace ought math
+" hi Visual ctermbg=Magenta
+	" sets the vim visual selection color to pink, ref-
+	" https://stackoverflow.com/questions/3074068/how-to-change-the-color-of-the-selected-code-vim-scheme for more config stuff
 
 
 
