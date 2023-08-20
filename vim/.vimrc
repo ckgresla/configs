@@ -1,10 +1,14 @@
 "CKG's Vimrc"
 
-set ts=4 sw=4
+
+set ts=4 sw=4  " set tab widths and the number of spaces to do for indentation to 4 spaces
 
 syntax on " Syntax highlighting
 
 set showmatch " Shows matching brackets
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta " recoloring of brackets 
+
+
 set ruler " Always shows location in file (line#)
 set smarttab " Autotabs for certain code
 set hlsearch "highlights all occurences of word being searched for (could use "hls" instead of "hlsearch")
