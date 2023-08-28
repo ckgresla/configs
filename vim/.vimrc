@@ -17,6 +17,8 @@ set smartindent "magic to smartly indent files
 set textwidth=0 "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
 set wrap
 
+set re=0 "updated REGEX engine, allows for opening typescript files without molasses, set as per suggestion in- https://jameschambers.co.uk/vim-typescript-slow
+
 
 
 
