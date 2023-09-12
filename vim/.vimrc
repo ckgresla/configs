@@ -2,6 +2,12 @@
 
 
 set ts=4 sw=4  " set tab widths and the number of spaces to do for indentation to 4 spaces
+set softtabstop=4 " how many spaces is a 'tab' or 'backspace' keypress worth? - https://vi.stackexchange.com/questions/4244/what-is-softtabstop-used-for
+set tabstop=4 " how many spaces is a single tab (\t) worth? 
+set shiftwidth=4 " how many spaces is a single code indentation worth? 
+" set expandtab " ~converts all tabs into equivalent number spaces -- never see a tab in a file again
+
+set autoindent
 
 syntax on " Syntax highlighting
 
@@ -17,7 +23,7 @@ set smartindent "magic to smartly indent files
 set textwidth=0 "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
 set wrap
 
-set re=0 "updated REGEX engine, allows for opening typescript files without molasses, set as per suggestion in- https://jameschambers.co.uk/vim-typescript-slow
+set re=0 "updated REGEX engine, allows for opening typescript files without molasses 
 
 
 
