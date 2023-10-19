@@ -23,7 +23,7 @@ window:
   #Full has all window decorations (regular MacOS style), buttonless has no decorations and works on BigSur ["full", "none", "buttonless"]
 
   # Background Opacity
-  #opacity: .9 #if commented out, set to 100%
+  #opacity: .7 #if commented out, set to 100%
 
 
 font:
@@ -33,47 +33,10 @@ font:
   size: 12.0
 
 
-# Color Scheme
-#Currently set to Catppuccin 
-colors:
-  # Default colors
-  primary:
-    background: '0x0f1419' #black bg
-    #background: '0xeff1f5'#white bg
-    foreground: '0xD9E0EE'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x1E1D2F'
-    #cursor: '0xF5E0DC' #default
-    cursor: '0xC9CBFF'
-
-  # Normal colors
-  normal:
-    black:   '0x6E6C7E'
-    red:     '0xF28FAD'
-    green:   '0xABE9B3'
-    yellow:  '0xFAE3B0'
-    blue:    '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan:    '0x89DCEB' #default cyan color
-    #cyan:    '0xC9CBFF' #Lavender color from the git website
-  	white:   '0xD9E0EE'
-
-  # Bright colors
-  bright:
-    black:   '0x988BA2'
-    red:     '0xF28FAD'
-    green:   '0xABE9B3'
-    yellow:  '0xFAE3B0'
-    blue:    '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan:    '0x89DCEB'
-    white:   '0xD9E0EE'
-
-  indexed_colors:
-    - { index: 16, color: '0xF8BD96' }
-    - { index: 17, color: '0xF5E0DC' }
+# Color Scheme via an import of external file
+import:
+   - ~/.config/alacritty/themes/catppucin-dark.yml
+   # - ~/.config/alacritty/themes/catppucin-light.yml
 
 
 # Remapping keys for better tmux'in on MacOS, as per- https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux/
