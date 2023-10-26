@@ -140,6 +140,8 @@ alias ta="tmux attach"	#quick attaching to the existing server (can navigate mor
 alias startmux="sh /Users/ckg/spellbook/scripts/startmux.sh"	#run tmux startup script (location VARIANT)
 alias endmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t" 	#killall currently running tmux sessions
 
+# Things3 -- make use of their URL Wizard- https://culturedcode.com/things/support/articles/2803573/
+alias tm="open 'things:///add?title=MEETING%20--%20$(date +'%Y-%m-%d')&notes=%23%20Information%0A%0A%23%20Notes%0A-%20%0A%0A&when=today&list=Notes'"
 
 # CONDA
 # need to configure per machine!
