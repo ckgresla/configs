@@ -128,6 +128,7 @@ alias dm="sed -i ''  's/catppucin-light.yml/catppucin-dark.yml/' ~/.config/alacr
 
 # Git 
 alias gcs="git status"	
+alias grc="GIT_EDITOR=true git rebase --continue"  #rebase continue, without opening the commit msg editor
 alias gl="git log --name-only"	
 
 # Python
