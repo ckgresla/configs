@@ -96,6 +96,15 @@ source $ZSH/oh-my-zsh.sh
 # Set vim Mode for zsh
 bindkey -v #insert mode comes default, hit escape to use the magic
 
+# Set Up/Down Arrow to Traverse Command History (not default for zsh on all systems)
+# taken from- https://superuser.com/questions/585003/searching-through-history-with-up-and-down-arrow-in-zsh
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "$key[Up]" up-line-or-beginning-search # Up
+bindkey "$key[Down]" down-line-or-beginning-search # Down
+
 
 # Specify the Language Environment
 export LANG="en_US.UTF-8"
