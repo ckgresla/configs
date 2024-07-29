@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Set vim Mode for zsh
-bindkey -v #insert mode comes default, hit escape to use the magic
+bindkey -v # insert mode comes default, hit escape to use the magic
 
 # Set Up/Down Arrow to Traverse Command History (not default for zsh on all systems)
 # taken from- https://superuser.com/questions/585003/searching-through-history-with-up-and-down-arrow-in-zsh
@@ -120,7 +120,7 @@ else
 fi
 
 
-# Aliases et al
+## aliases 
 alias rng="ranger"
 alias cfgs="ranger ~/.config" #open ranger in my ".config" folder
 alias colortest="msgcat --color=test"
@@ -135,26 +135,36 @@ alias public_ip_address="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut
 alias lm="sed -i ''  's/catppucin-dark.yml/catppucin-light.yml/' ~/.config/alacritty/alacritty.yml"
 alias dm="sed -i ''  's/catppucin-light.yml/catppucin-dark.yml/' ~/.config/alacritty/alacritty.yml"
 
-# Git 
-alias gcs="git status"	
-alias grc="GIT_EDITOR=true git rebase --continue"  #rebase continue, without opening the commit msg editor
-alias gl="git log --name-only"	
+# git 
+alias gd="git diff"
+alias ga='git add'
+alias gcs="git status"  #get current status of branch
+alias gp='git push'
+alias gls='git log --stat'
+alias grc='GIT_EDITOR=true git rebase --continue'
 
-# Python
+
+# screen
+alias scls="screen -ls"
+alias scx="screen -x"
+alias scS="screen -S"
+
+# python
 alias py="python"
-alias ca="conda activate" 	#shortcut to this rather lengthy environment activation command
-alias ced="conda deactivate" 	#deactivate current env, ced translates to:  "conda envrionment deactivate"
+alias pym="python -m"
+alias ca="conda activate"
+alias ced="conda deactivate"
 
-# Tmux Specific
+# tmux Specific
 alias ta="tmux attach"	#quick attaching to the existing server (can navigate more easily between windows within tmux as opposed to naming which window to attach from cli)
-alias startmux="sh /Users/ckg/spellbook/scripts/startmux.sh"	#run tmux startup script (location VARIANT)
-alias endmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t" 	#killall currently running tmux sessions
+alias startmux="sh /Users/ckg/spellbook/scripts/startmux.sh" # start script for tmux, see my 'spellbook' repo
+alias endmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t" # killall currently running tmux sessions
 
-# Things3 -- make use of their URL Wizard- https://culturedcode.com/things/support/articles/2803573/
+# things3 -- make use of their URL Wizard- https://culturedcode.com/things/support/articles/2803573/
 alias tm="open 'things:///add?title=MEETING%20--%20$(date +'%Y-%m-%d')&notes=%23%20Information%0A%0A%23%20Notes%0A-%20%0A%0A&when=today&list=Notes'"
 
 # CONDA
-# need to configure per machine!
+# configure per machine!
 
 
 # Ruby
@@ -163,5 +173,16 @@ alias tm="open 'things:///add?title=MEETING%20--%20$(date +'%Y-%m-%d')&notes=%23
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.4
+
+
+
+
+## application 
+
+# Launch Docker in the Background -- a convenience on macos
+if ! pgrep -f Docker > /dev/null; then
+  open --background -a Docker                                                  while ! docker system info > /dev/null 2>&1; do sleep 1; done
+fi
+
 
 
