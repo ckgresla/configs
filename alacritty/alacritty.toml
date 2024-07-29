@@ -1,0 +1,102 @@
+# CKG's Alacritty Config
+# see specifiables- https://alacritty.org/config-alacritty.html
+
+import = ["/Users/ckg/.config/alacritty/themes/catppucin-dark.toml"]
+
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrains Mono NL"
+
+
+## fancy ui
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+title = "wizardry"
+dynamic_title = false # whether or not to use current cmd as the window title
+
+[window.padding]
+x = 12
+y = 12
+
+
+## keybindings to make working w tmux feel real good
+# Main keyboard bindings configuration
+[keyboard]
+  # Bindings for tmux control with Control and Shift modifiers
+  [[keyboard.bindings]]
+  key = "Return"
+  mods = "Control|Shift"
+  chars = "\u0002c" # create a new tmux window
+
+  [[keyboard.bindings]]
+  key = "Back"
+  mods = "Control|Shift"
+  chars = "\u0002x" # kill the current pane (in tmux)
+
+  [[keyboard.bindings]]
+  key = "m" # TODO@CKG: this is disgusting, somehow on new macbook alacritty is not reading the comma char correctly, so use m for the moment -- ew
+  mods = "Control|Shift"
+  chars = "\u0002," # rename the current tmux window
+
+  [[keyboard.bindings]]
+  key = "Right"
+  mods = "Control|Shift"
+  chars = "\u0002n" # switch to next tmux window
+
+  [[keyboard.bindings]]
+  key = "Left"
+  mods = "Control|Shift"
+  chars = "\u0002p" # switch to previous tmux window
+
+  # Bindings for selecting tmux windows directly with Command modifier
+  [[keyboard.bindings]]
+  key = "Key1"
+  mods = "Command"
+  chars = "\u00021" # select tmux window 1
+
+  [[keyboard.bindings]]
+  key = "Key2"
+  mods = "Command"
+  chars = "\u00022" # select tmux window 2
+
+  [[keyboard.bindings]]
+  key = "Key3"
+  mods = "Command"
+  chars = "\u00023" # select tmux window 3
+
+  [[keyboard.bindings]]
+  key = "Key4"
+  mods = "Command"
+  chars = "\u00024" # select tmux window 4
+
+  [[keyboard.bindings]]
+  key = "Key5"
+  mods = "Command"
+  chars = "\u00025" # select tmux window 5
+
+  [[keyboard.bindings]]
+  key = "Key6"
+  mods = "Command"
+  chars = "\u00026" # select tmux window 6
+
+  [[keyboard.bindings]]
+  key = "Key7"
+  mods = "Command"
+  chars = "\u00027" # select tmux window 7
+
+  [[keyboard.bindings]]
+  key = "Key8"
+  mods = "Command"
+  chars = "\u00028" # select tmux window 8
+
+  [[keyboard.bindings]]
+  key = "Key9"
+  mods = "Command"
+  chars = "\u00029" # select tmux window 9
+
+
+
