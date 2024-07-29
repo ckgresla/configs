@@ -1,4 +1,4 @@
-
+## katsulab box theme
 # avoid any spaces or funny business around colored text, ensure you use `"%{"` and `"}%"` to escape text and avoid corrupting the prompt
 PROMPT=" %{$fg_bold[yellow]%}[katsulab] %(?:%{$fg_bold[green]%}ϟ:%{$fg_bold[red]%}ϟ)"
 PROMPT+=' %{$fg[magenta]%}%~%{$reset_color%}$(git_prompt_info) '

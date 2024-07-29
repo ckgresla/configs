@@ -1,4 +1,4 @@
-
+## lab machine theme
 # avoid any spaces or funny business around colored text, ensure you use `"%{"` and `"}%"` to escape text and avoid corrupting the prompt
 PROMPT=" "
 PROMPT+='%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %(?:%{$fg_bold[green]%}+:%{$fg_bold[red]%}-)%{$reset_color%} '
