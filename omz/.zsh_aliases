@@ -27,6 +27,7 @@ alias py="python"
 alias pym="python -m"
 alias ca="conda activate"
 alias ced="conda deactivate"
+alias cel="conda env list"
 
 # tmux
 alias ta="tmux attach"  #quick attaching to the existing server (can navigate more easily between windows within tmux as opposed to naming which window to attach from cli)
