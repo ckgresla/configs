@@ -1,0 +1,37 @@
+
+## aliases
+# to be sourced inside of a zshrc file, i.e: 'source ~/.zsh_aliases'
+alias rng="ranger"
+alias cfgs="ranger ~/.config" # open ranger in the ".config" dir
+alias public_ip_address="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1"      #get current ip address information
+
+alias mbms="make build && make start"   #keep this long command short
+alias ms="make start" 
+alias mb="make build" 
+
+# git
+alias gd="git diff"
+alias ga='git add'
+alias gcs="git status"  #get current status of branch
+alias gp='git push'
+alias gls='git log --stat'
+alias grc='GIT_EDITOR=true git rebase --continue'
+
+# screen
+alias scls="screen -ls"
+alias scx="screen -x"
+alias scS="screen -S"
+
+# python 
+alias py="python"
+alias pym="python -m"
+alias ca="conda activate"
+alias ced="conda deactivate"
+
+# tmux
+alias ta="tmux attach"  #quick attaching to the existing server (can navigate more easily between windows within tmux as opposed to naming which window to attach from cli)
+alias startmux="sh /Users/ckg/spellbook/scripts/startmux.sh" # start script for tmux, see my 'spellbook' repo
+alias endmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t" # killall currently running tmux sessions
+
+
+

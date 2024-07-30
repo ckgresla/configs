@@ -91,6 +91,7 @@ plugins=(
 
 ####---- CKG's Configs ----####
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh_aliases 
 
 
 # Set vim Mode for zsh
@@ -120,67 +121,26 @@ else
 fi
 
 
-## aliases 
-alias rng="ranger"
-alias cfgs="ranger ~/.config" #open ranger in my ".config" folder
-alias colortest="msgcat --color=test"
-alias ckg-clock="tty-clock -b -S -D -t -c -C 7"
-alias mbms="make build && make start" 	#keep this long command short
-alias ms="make start" 	#always go fast
-alias mb="make build" 	#and FASTER
-alias public_ip_address="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1"	#get current ip address information
-
+## aliases (specific to MacOS)
 # Light and Dark mode toggles for alacritty
 # edit the alacritty config in-place to change the colors --> the extra '' after -i in sed is specific to MacOS
 alias lm="sed -i ''  's/catppucin-dark.yml/catppucin-light.yml/' ~/.config/alacritty/alacritty.yml"
 alias dm="sed -i ''  's/catppucin-light.yml/catppucin-dark.yml/' ~/.config/alacritty/alacritty.yml"
 
-# git 
-alias gd="git diff"
-alias ga='git add'
-alias gcs="git status"  #get current status of branch
-alias gp='git push'
-alias gls='git log --stat'
-alias grc='GIT_EDITOR=true git rebase --continue'
-
-
-# screen
-alias scls="screen -ls"
-alias scx="screen -x"
-alias scS="screen -S"
-
-# python
-alias py="python"
-alias pym="python -m"
-alias ca="conda activate"
-alias ced="conda deactivate"
-
-# tmux Specific
-alias ta="tmux attach"	#quick attaching to the existing server (can navigate more easily between windows within tmux as opposed to naming which window to attach from cli)
-alias startmux="sh /Users/ckg/spellbook/scripts/startmux.sh" # start script for tmux, see my 'spellbook' repo
-alias endmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t" # killall currently running tmux sessions
-
 # things3 -- make use of their URL Wizard- https://culturedcode.com/things/support/articles/2803573/
 alias tm="open 'things:///add?title=MEETING%20--%20$(date +'%Y-%m-%d')&notes=%23%20Information%0A%0A%23%20Notes%0A-%20%0A%0A&when=today&list=Notes'"
 
-# CONDA
-# configure per machine!
 
 
 # Ruby
 # stuff for my jeykll site, goodness gracious Ruby can be a pain
-# below for WorkBook
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.4
 
 
-
-
 ## application 
-
-# Launch Docker in the Background -- a convenience on macos
-# Launch Docker in the Background -- a convenience on macOS
+# Launch Docker in the Background -- a convenience on MacOS
 if ! pgrep -f Docker > /dev/null; then
   open --background -a Docker
   while ! docker system info > /dev/null 2>&1; do sleep 1; done
