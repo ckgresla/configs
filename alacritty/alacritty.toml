@@ -38,7 +38,7 @@ y = 12
   chars = "\u0002x" # kill the current pane (in tmux)
 
   [[keyboard.bindings]]
-  key = "m" # TODO@CKG: this is disgusting, somehow on new macbook alacritty is not reading the comma char correctly, so use m for the moment -- ew
+  key = 43 # this maps to the "Comma" key, string literal "," on macos -- use the keycode instead of char/name as those don't parse
   mods = "Control|Shift"
   chars = "\u0002," # rename the current tmux window
 
