@@ -12,12 +12,11 @@ command_exists() {
 # Step 1: Check if zsh is installed on local sys
 if ! command_exists zsh; then
     echo "zsh is not installed. Installing zsh..."
-    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        sudo apt update && sudo apt install -y zsh
-    else
+    if [[ "$OSTYPE" != "linux-gnu"* ]]; then
         echo "Unsupported OS. Please install zsh manually."
         exit 1
     fi
+    sudo apt update && sudo apt-get install -y zsh
 else
     echo "zsh is already installed."
 fi
