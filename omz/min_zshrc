@@ -74,45 +74,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-# User Configs
-
+## CKG Configs
 # Aliases
-alias rng="ranger"
-alias colortest="msgcat --color=test"
-alias ckg-clock="tty-clock -b -S -D -t -c -C 7"
-alias public_ip_address="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1"  #get current ip address information
-alias caffeinate="ca lc && py ~/spellbook/scripts/NoSleep.py"
-
-# git
-alias gcs="git status"
-alias gp="git push"
-alias ga="git add"
-alias gls="git log --stat"
-alias grc='GIT_EDITOR=true git rebase --continue'
-
-# python 
-alias py="python"
-alias ca="conda activate"   #shortcut to this rather lengthy environment activation command
-alias ced="conda deactivate"    #deactivate current env, ced translates to:  "conda envrionment deactivate"
-
-# tmux
-alias ta="tmux attach"
-alias startmux="sh /Users/ckg/spellbook/scripts/startmux.sh"    #run tmux startup script (location VARIANT)
-alias endmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t"     #killall currently running tmux sessions
-
-# Quick CDs, et al
-alias cfgs="ranger ~/.config" #open ranger in my ".config" folder
-
-# screen
-alias scls="screen -ls"
-alias scx="screen -x"
-alias scS="screen -S"
-
-
-# Hide/Show Desktop Icons (on MacOS)
-#alias ShowDesktopFolders="chflags nohidden /Users/ckg-files/Desktop/Programming /Users/ckg-files/Desktop/Wizardry /Users/ckg-files/Desktop/Alexandria /Users/ckg-files/Desktop/Personal /Users/ckg-files/Desktop/UNI  "
-#alias HideDesktopFolders="chflags hidden /Users/ckg-files/Desktop/* "
-
+source ~/.zsh_aliases
 
 # Text Editor -- Remote & Local Sessions
 if [[ -n $SSH_CONNECTION ]]; then
