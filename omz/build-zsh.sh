@@ -76,15 +76,6 @@ grep -qxF "ZSH_THEME=\"ephemeral-node\"" "$HOME/.zshrc" || echo "ZSH_THEME=\"eph
 echo "Done."
 
 
-# Step 7: Change the default shell to zsh
-if [ "$SHELL" != "$(command -v zsh)" ]; then
-    echo "Changing the default shell to zsh..."
-    chsh -s "$(command -v zsh)"
-    echo "Default shell changed to zsh."
-else
-    echo "Default shell is already zsh."
-fi
-
-
 echo "zsh setup completed successfully."
+echo 'run: chsh -s "$(command -v zsh)" on your node to make it default'
 
