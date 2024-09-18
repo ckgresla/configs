@@ -16,6 +16,7 @@ if ! command_exists zsh; then
         echo "Unsupported OS. Please install zsh manually."
         exit 1
     fi
+    sudo apt update -y 
     sudo apt-get install -y zsh
 else
     echo "zsh is already installed."
