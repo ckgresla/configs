@@ -30,38 +30,54 @@ else
     echo "Oh My Zsh is already installed."
 fi
 
-# Step 3: Download min_zshrc and append its contents to ~/.zshrc
-MIN_ZSHRC="$HOME/.min_zshrc"
-MIN_ZSHRC_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/min_zshrc"
+
+# Step 3: Replace the default ~/.zshrc with ckg's min_zshrc from the provided URL
+ZSHRC_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/min_zshrc"
+ZSHRC_FILE="$HOME/.zshrc"
+
+echo "Downloading min_zshrc to replace the current ~/.zshrc..."
+wget -qO "$ZSHRC_FILE" "$ZSHRC_URL"
+echo "Replaced ~/.zshrc with min_zshrc."
+
+
+# Step 4: Download min_zshrc and append its contents to ~/.zshrc
+ALIASES_FILE="$HOME/.zsh_aliases"
+ALIASES_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/.zsh_aliases"
 
 if [ ! -f "$MIN_ZSHRC" ]; then
-    echo "min_zshrc not found in the home directory. Downloading min_zshrc..."
-    wget -qO "$MIN_ZSHRC" "$MIN_ZSHRC_URL"
-    echo "Downloaded min_zshrc to $HOME."
+    echo "aliases file not found in the home directory. Downloading from repo..."
+    wget -qO "$ALIASES_FILE" "$ALIASES_URL"
+    echo "Downloaded aliases file to $HOME."
 else
-    echo "min_zshrc already exists in the home directory."
+    echo "aliases file already exists in the home directory."
 fi
 
-# Step 4: Append the contents of min_zshrc to ~/.zshrc
-echo "Appending contents of min_zshrc to ~/.zshrc..."
-grep -qxF "source $MIN_ZSHRC" "$HOME/.zshrc" || echo "source $MIN_ZSHRC" >> "$HOME/.zshrc"
+# Step 5: source the contents of the aliases file to ~/.zshrc
+echo "adding in a source for the aliases to $HOME/.zshrc"
+grep -qxF "source $ALIASES_FILE" "$HOME/.zshrc" || echo "source $ALIASES_FILE" >> "$HOME/.zshrc"
 echo "Done."
 
-# Step 5: Download lab.zsh-theme to the custom/themes directory of Oh My Zsh
-THEME_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/themes/lab.zsh-theme"
+# Step 6: Download lab.zsh-theme to the custom/themes directory of Oh My Zsh
+THEME_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/themes/ephemeral-node.zsh-theme"
 THEME_DIR="$HOME/.oh-my-zsh/custom/themes"
-THEME_FILE="$THEME_DIR/lab.zsh-theme"
+THEME_FILE="$THEME_DIR/ephemeral-node.zsh-theme"
 
 if [ ! -f "$THEME_FILE" ]; then
-    echo "Downloading lab.zsh-theme to $THEME_DIR..."
+    echo "Downloading ephemeral-node.zsh-theme to $THEME_DIR..."
     mkdir -p "$THEME_DIR"
     wget -qO "$THEME_FILE" "$THEME_URL"
-    echo "Downloaded lab.zsh-theme to $THEME_DIR."
+    echo "Downloaded ephemeral-node.zsh-theme to $THEME_DIR."
 else
-    echo "lab.zsh-theme already exists in the custom/themes directory."
+    echo "ephemeral-node.zsh-theme already exists in the custom/themes directory."
 fi
 
-# Step 6: Change the default shell to zsh
+# Append the theme to ~/.zshrc if not already present
+echo "adding ephemeral-node theme to $HOME/.zshrc"
+grep -qxF "ZSH_THEME=\"ephemeral-node\"" "$HOME/.zshrc" || echo "ZSH_THEME=\"ephemeral-node\"" >> "$HOME/.zshrc"
+echo "Done."
+
+
+# Step 7: Change the default shell to zsh
 if [ "$SHELL" != "$(command -v zsh)" ]; then
     echo "Changing the default shell to zsh..."
     chsh -s "$(command -v zsh)"
