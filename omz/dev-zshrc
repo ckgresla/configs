@@ -14,8 +14,8 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="wizbang" #CKG Version of robbyrussell (saved in /Users/ckg-files/.oh-my-zsh/custom/themes)
-ZSH_THEME="lab" # a sensible default for nodes
-
+# ZSH_THEME="lab" # a sensible default for nodes
+ZSH_THEME="ephemeral-node"
 
 
 # CASE_SENSITIVE="true" #leave false to have case insensitive completition

@@ -12,12 +12,12 @@ command_exists() {
 # Step 1: Check if zsh is installed on local sys
 if ! command_exists zsh; then
     echo "zsh is not installed. Installing zsh..."
-    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        sudo apt update && sudo apt install -y zsh
-    else
+    if [[ "$OSTYPE" != "linux-gnu"* ]]; then
         echo "Unsupported OS. Please install zsh manually."
         exit 1
     fi
+    sudo apt update -y 
+    sudo apt-get install -y zsh
 else
     echo "zsh is already installed."
 fi
@@ -31,20 +31,20 @@ else
 fi
 
 
-# Step 3: Replace the default ~/.zshrc with ckg's min_zshrc from the provided URL
-ZSHRC_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/min_zshrc"
+# Step 3: Replace the default ~/.zshrc with ckg's dev-zshrc from the provided URL
+ZSHRC_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/dev-zshrc"
 ZSHRC_FILE="$HOME/.zshrc"
 
-echo "Downloading min_zshrc to replace the current ~/.zshrc..."
+echo "Downloading dev-zshrc to replace the current ~/.zshrc..."
 wget -qO "$ZSHRC_FILE" "$ZSHRC_URL"
-echo "Replaced ~/.zshrc with min_zshrc."
+echo "Replaced ~/.zshrc with dev-zshrc."
 
 
-# Step 4: Download min_zshrc and append its contents to ~/.zshrc
+# Step 4: Download aliases if not already present (sourced in the dev-zshrc)
 ALIASES_FILE="$HOME/.zsh_aliases"
 ALIASES_URL="https://raw.githubusercontent.com/ckgresla/configs/refs/heads/main/omz/.zsh_aliases"
 
-if [ ! -f "$MIN_ZSHRC" ]; then
+if [ ! -f "$ALIASES_FILE" ]; then
     echo "aliases file not found in the home directory. Downloading from repo..."
     wget -qO "$ALIASES_FILE" "$ALIASES_URL"
     echo "Downloaded aliases file to $HOME."
@@ -71,21 +71,8 @@ else
     echo "ephemeral-node.zsh-theme already exists in the custom/themes directory."
 fi
 
-# Append the theme to ~/.zshrc if not already present
-echo "adding ephemeral-node theme to $HOME/.zshrc"
-grep -qxF "ZSH_THEME=\"ephemeral-node\"" "$HOME/.zshrc" || echo "ZSH_THEME=\"ephemeral-node\"" >> "$HOME/.zshrc"
-echo "Done."
-
-
-# Step 7: Change the default shell to zsh
-if [ "$SHELL" != "$(command -v zsh)" ]; then
-    echo "Changing the default shell to zsh..."
-    chsh -s "$(command -v zsh)"
-    echo "Default shell changed to zsh."
-else
-    echo "Default shell is already zsh."
-fi
 
 
 echo "zsh setup completed successfully."
+echo 'run: chsh -s "$(command -v zsh)" on your node to make it default'
 
