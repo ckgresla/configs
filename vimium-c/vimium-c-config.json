@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "9/15/2024, 2:01:19 PM",
-	"time": 1726434079743,
+	"@time": "10/3/2024, 12:20:31 PM",
+	"time": 1727983231356,
 	"environment": {
 		"extension": "2.11.3",
 		"platform": "mac",
-		"chromium": 128
+		"chromium": 129
 	},
 	"keyLayout": 2,
 	"keyMappings": [
@@ -14,6 +14,7 @@
 		"unmap o",
 		"unmap /",
 		"unmap <a-m>",
+		"unmap b",
 		""
 	],
 	"scrollStepSize": 300,
