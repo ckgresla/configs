@@ -118,9 +118,19 @@ command! Q quit
 
 " Plug-Ins 
 " currently using vim-plug, see- https://github.com/junegunn/vim-plug
-call plug#begin('~/.vim/plugged')  "init plugins for use, as per- https://stackoverflow.com/questions/69250609/global-vim-plugin-settings-with-vim-plug
 
+" auto install -- when not already on system
+" see- https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+" see- https://stackoverflow.com/questions/69250609/global-vim-plugin-settings-with-vim-plug
+call plug#begin('~/.vim/plugged') 
+
+" plugins
 " Goyo- https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'  "a great tool for writing in Vim
 
@@ -141,12 +151,10 @@ autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif  "autores
 let g:goyo_height="100%"
 let g:goyo_width="80%"
 
-
 " Pear Tree- https://github.com/tmsvg/pear-tree
 Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
 
-
 call plug#end()
-" End PlugIn Section -- need call the end() func to get all loaded in
+" End PlugIn Section -- all plugins are loaded in on end()
 
 
