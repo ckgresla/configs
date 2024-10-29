@@ -2,35 +2,38 @@
 
 
 set ts=4 sw=4  " set tab widths and the number of spaces to do for indentation to 4 spaces
-set softtabstop=4 " how many spaces is a 'tab' or 'backspace' keypress worth? - https://vi.stackexchange.com/questions/4244/what-is-softtabstop-used-for
-set tabstop=4 " how many spaces is a single tab (\t) worth? 
-set shiftwidth=4 " how many spaces is a single code indentation worth? 
+set softtabstop=4  " how many spaces is a 'tab' or 'backspace' keypress worth? - https://vi.stackexchange.com/questions/4244/what-is-softtabstop-used-for
+set tabstop=4  " how many spaces is a single tab (\t) worth? 
+set shiftwidth=4  " how many spaces is a single code indentation worth? 
 " set expandtab " ~converts all tabs into equivalent number spaces -- never see a tab in a file again
 
 set autoindent
 
-syntax on " Syntax highlighting
+syntax on  " Syntax highlighting
 
-set showmatch " Shows matching brackets
-hi MatchParen cterm=bold ctermbg=none ctermfg=magenta " recoloring of brackets 
+set showmatch  " Shows matching brackets
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta  " recoloring of brackets 
 
 
-set ruler " Always shows location in file (line#)
-set smarttab " Autotabs for certain code
-set hlsearch "highlights all occurences of word being searched for (could use "hls" instead of "hlsearch")
-set ignorecase "ignore casing on word search (could also use "ic" instead of "ignorecase")
-set smartindent "magic to smartly indent files
-set textwidth=0 "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
+set ruler  " Always shows location in file (line#)
+set smarttab  " Autotabs for certain code
+set hlsearch  "highlights all occurences of word being searched for (could use "hls" instead of "hlsearch")
+set ignorecase  "ignore casing on word search (could also use "ic" instead of "ignorecase")
+set smartindent  "magic to smartly indent files
+set textwidth=0  "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
 set wrap
 
-set re=0 "updated REGEX engine, allows for opening typescript files without molasses 
+set re=0  "updated REGEX engine, allows for opening typescript files without molasses 
+let g:netrw_keepdir=0  " when using netrw for viewing filesystems, use current dir as actual dir
+                       " see- https://stackoverflow.com/questions/28216075/vim-file-explorer-make-browsing-directory-the-current-directory
 
 
 
 
+"" Coloscheme
 "colorscheme peachpuff "disgusting on normal (somehow theme didn't set bg correctly before Ventura update)
 
-" Custom Colorscheme
+" custom colorscheme
 " colorscheme CKG-VimColorScheme  "hack on the peachpuff colorscheme
 colorscheme readability " custom theme made via online GUI
 
@@ -40,8 +43,7 @@ colorscheme readability " custom theme made via online GUI
 
 
 
-" Status Bar- https://stackoverflow.com/questions/5375240/a-more-useful-statusline-in-vim
-
+"" Status Bar- https://stackoverflow.com/questions/5375240/a-more-useful-statusline-in-vim
 " items in status line (actual values)
 set laststatus=2
 set statusline=
@@ -77,15 +79,11 @@ hi User9 guifg=#ffffff  guibg=#810085
 hi User0 guifg=#ffffff  guibg=#094afe
 
 
-" Set ink Syntax Highlighting -- TheSephist's programming lang
-au BufNewFile,BufRead *.ink set filetype=ink
-
 " Prevent Markdown Errors for Underscores, as per- https://stackoverflow.com/questions/19137601/turn-off-highlighting-a-certain-pattern-in-vim
 autocmd Syntax markdown syn match markdownIgnore "_"
 
 
-" KeyBindings
-
+"" KeyBindings
 " shortcut to go to "middle" of a line (as seen in- https://superuser.com/questions/216411/go-to-middle-of-line-in-vim)
 map gm :call cursor(0, len(getline('.'))/2)<CR>
 
@@ -120,11 +118,11 @@ command! Q quit
 
 " Plug-Ins 
 " currently using vim-plug, see- https://github.com/junegunn/vim-plug
-call plug#begin('~/.vim/plugged') "init plugins for use, as per- https://stackoverflow.com/questions/69250609/global-vim-plugin-settings-with-vim-plug
+call plug#begin('~/.vim/plugged')  "init plugins for use, as per- https://stackoverflow.com/questions/69250609/global-vim-plugin-settings-with-vim-plug
 
 
 " Goyo- https://github.com/junegunn/goyo.vim
-Plug 'junegunn/goyo.vim' "a great tool for writing in Vim
+Plug 'junegunn/goyo.vim'  "a great tool for writing in Vim
 
 function! s:goyo_enter()
 	set linebreak
@@ -138,14 +136,14 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter() 
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif "autoresize as per- https://github.com/junegunn/goyo.vim/issues/159
+autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif  "autoresize as per- https://github.com/junegunn/goyo.vim/issues/159
 
 let g:goyo_height="100%"
 let g:goyo_width="80%"
 
 
 " Pear Tree- https://github.com/tmsvg/pear-tree
-Plug 'tmsvg/pear-tree' "autocomplete for all brackets, paranethesis and stuff
+Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
 
 
 call plug#end()
