@@ -47,7 +47,7 @@ hi Constant   guisp=NONE guifg=#96CDFB guibg=NONE ctermfg=117 ctermbg=NONE gui=N
 hi Identifier guisp=NONE guifg=#96CDFB guibg=NONE ctermfg=117 ctermbg=NONE gui=NONE cterm=NONE
 hi Statement  guisp=NONE guifg=#F28FAD guibg=NONE ctermfg=211 ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc    guisp=NONE guifg=#FAE3B0 guibg=NONE ctermfg=223 ctermbg=NONE gui=NONE cterm=NONE
-hi Type       guisp=NONE guifg=#FAE3B0 guibg=NONE ctermfg=223 ctermbg=NONE gui=NONE cterm=NONE
+hi Type       guisp=NONE guifg=#FAE2B0 guibg=NONE ctermfg=223 ctermbg=NONE gui=NONE cterm=NONE
 hi Special    guisp=NONE guifg=#C9CBFF guibg=NONE ctermfg=189 ctermbg=NONE gui=NONE cterm=NONE
 hi Underlined guisp=NONE guifg=#FAE3B0 guibg=NONE ctermfg=223 ctermbg=NONE gui=NONE cterm=NONE
 hi Ignore     guisp=NONE guifg=#6E6C7E guibg=NONE ctermfg=243 ctermbg=NONE gui=NONE cterm=NONE
@@ -95,7 +95,7 @@ hi clear SpellLocal "word that is recognized as being used in a diff region, oth
 hi SpellLocal cterm=underline,bold ctermfg=Blue
 
 " CKG Customs -- stuff not configured in pinto but still want to keep
-hi Search ctermfg=Black "defaults to white, very painful to view w Pastel Catppuccin
+hi Search ctermfg=Black ctermbg=White "defaults to white, very painful to view w Pastel Catppuccin
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta 
 	" color of matching paranethsis, good to change from other colors to see where a brace ought math
 " hi Visual ctermbg=Magenta
