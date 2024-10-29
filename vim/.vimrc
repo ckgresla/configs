@@ -17,20 +17,53 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=magenta  " recoloring of brackets
 
 set ruler  " Always shows location in file (line#)
 set smarttab  " Autotabs for certain code
-set hlsearch  "highlights all occurences of word being searched for (could use "hls" instead of "hlsearch")
+set is hlsearch hls  " enable incremental & highlight search
 set ignorecase  "ignore casing on word search (could also use "ic" instead of "ignorecase")
 set smartindent  "magic to smartly indent files
 set textwidth=0  "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
 set wrap
 
-set re=0  "updated REGEX engine, allows for opening typescript files without molasses 
-let g:netrw_keepdir=0  " when using netrw for viewing filesystems, use current dir as actual dir
-                       " see- https://stackoverflow.com/questions/28216075/vim-file-explorer-make-browsing-directory-the-current-directory
+set re=0  " updated REGEX engine, allows for opening typescript files without molasses
 
 
+" when using netrw for viewing filesystems, use current dir as actual dir
+" see- https://stackoverflow.com/questions/28216075/vim-file-explorer-make-browsing-directory-the-current-directory
+let g:netrw_keepdir=0
 
 
-"" Coloscheme
+" Highlight the current match (under cursor) when searching in vim
+" see answer in- https://stackoverflow.com/questions/45683303/how-to-have-vim-highlight-color-change-for-the-pattern-under-cursor
+" + jump screen to next match in search results (centered vertically on screen) --> accomplished via 'zz' postfix in nnoremaps
+nnoremap <silent> n nzz:call HLNext()<cr>
+nnoremap <silent> N Nzz:call HLNext()<cr>
+
+" Global variable to store the match ID
+let g:current_match_id = -1
+
+function! HLNext()
+    " Clear previous highlight if it exists
+    if g:current_match_id != -1
+        call matchdelete(g:current_match_id)
+        let g:current_match_id = -1
+    endif
+    " Create pattern for current search match under cursor
+    let target_pat = '\c\%#'.@/
+
+    " Create new highlight and store its ID
+    let g:current_match_id = matchadd('ErrorMsg', target_pat, 101)
+
+    " Force screen update
+    redraw
+endfunction
+
+" Optional: Clear highlight when cursor moves
+augroup ClearSearchHL
+    autocmd!
+    autocmd CursorMoved * if g:current_match_id != -1 | call matchdelete(g:current_match_id) | let g:current_match_id = -1 | endif
+augroup END
+
+
+"" Colorscheme
 "colorscheme peachpuff "disgusting on normal (somehow theme didn't set bg correctly before Ventura update)
 
 " custom colorscheme
@@ -53,19 +86,10 @@ set statusline+=%2*\ %y\                                  "FileType
 set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
 set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
 set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..) 
-set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
+set statusline+=%5*\ %{&spelllang}\                       "Spellanguage on
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=%9*\ col:%03c\                            "Colnr
 set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
-
-"Highlight on for Searching
-function! HighlightSearch()
-  if &hls
-    return 'H'
-  else
-    return ''
-  endif
-endfunction
 
 "colors to use in StatusLine
 hi User1 guifg=#ffdad8  guibg=#880c0e
@@ -94,24 +118,6 @@ command! W write
 command! Q quit
 
 
-" Autocomplete for Typical Special Characters
-
-" Match Brackets -- quick solution but not necessarily intelligent (remaps all single entries to the pair entries instead)
-" Single Keypress will write out the pair of characters (Ex. [] instead of [ for brackets)
-" Double Keypress will write out just the single character (Ex. [ instead of [[ for brackets)
-"inoremap { {}<left>
-"inoremap {{ {
-"inoremap {} {}
-"inoremap [ []<left>
-"inoremap [[ [
-"inoremap [] []
-"inoremap ( ()<left>
-"inoremap (( (
-"inoremap () ()
-"inoremap " ""<left>
-"inoremap "" ""
-"inoremap ' ''<left>
-"inoremap '' ''
 
 
 
@@ -153,6 +159,9 @@ let g:goyo_width="80%"
 
 " Pear Tree- https://github.com/tmsvg/pear-tree
 Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
+
+" Commentary- https://github.com/tpope/vim-commentary#installation
+Plug 'tpope/vim-commentary'  " comment things in/out
 
 call plug#end()
 " End PlugIn Section -- all plugins are loaded in on end()
