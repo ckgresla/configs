@@ -1,5 +1,11 @@
 # Configs et al for VIM  
 
+## Setting Up a New Machine
+Simple, just run `./setup.sh` in order to:
+1. symlink the `.vimrc` included here with that in the User's home dir 
+2. copy the colorscheme used in the config file to the `.vim/colors` dir
+> be happy!
+
 ## Copying a RC to a Remote
 instructions are displayed as though you have an entry for the remote in your `~/.ssh/config` -- lets use `lab` as an example remote machine
 1. Port over the useful bits from the `.vimrc` to a file called `.minvimrc` (all of the essential bits from vim, no plugins or stuff)
