@@ -5,7 +5,7 @@ set ts=4 sw=4  " set tab widths and the number of spaces to do for indentation t
 set softtabstop=4  " how many spaces is a 'tab' or 'backspace' keypress worth? - https://vi.stackexchange.com/questions/4244/what-is-softtabstop-used-for
 set tabstop=4  " how many spaces is a single tab (\t) worth? 
 set shiftwidth=4  " how many spaces is a single code indentation worth? 
-" set expandtab " ~converts all tabs into equivalent number spaces -- never see a tab in a file again
+set expandtab " ~converts all tabs into equivalent number spaces -- never see a tab in a file again
 
 set autoindent
 
