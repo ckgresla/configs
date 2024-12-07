@@ -4,6 +4,7 @@
 alias rng="ranger"
 alias cfgs="ranger ~/.config" # open ranger in the ".config" dir
 alias public_ip_address="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1"      #get current ip address information
+alias clock="tty-clock  -ScDt -C 7"      # get executable on MacOS w 'brew install tty-clock'
 
 alias mbms="make build && make start"   #keep this long command short
 alias ms="make start" 
