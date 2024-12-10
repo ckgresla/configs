@@ -1,7 +1,3 @@
-# CKG's Alacritty Config
-# see specifiables- https://alacritty.org/config-alacritty.html
-
-import = ["/Users/ckg/.config/alacritty/themes/catppucin-dark.toml"]
 
 
 [font]
@@ -97,6 +93,13 @@ y = 12
   key = "Key9"
   mods = "Command"
   chars = "\u00029" # select tmux window 9
+
+[general]
+# CKG's Alacritty Config
+# see specifiables- https://alacritty.org/config-alacritty.html
+
+# import = ["/Users/ckg/.config/alacritty/themes/catppucin-light.toml"]
+import = ["/Users/ckg/.config/alacritty/themes/catppucin-dark.toml"]
 
 
 
