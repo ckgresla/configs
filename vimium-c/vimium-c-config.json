@@ -1,12 +1,22 @@
 {
 	"name": "Vimium C",
-	"@time": "10/3/2024, 12:20:31 PM",
-	"time": 1727983231356,
+	"@time": "1/7/2025, 8:36:51 AM",
+	"time": 1736267811975,
 	"environment": {
 		"extension": "2.11.3",
 		"platform": "mac",
-		"chromium": 129
+		"chromium": 131
 	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://docs.google.com/spreadsheets"
+		}
+	],
 	"keyLayout": 2,
 	"keyMappings": [
 		"#!no-check",
