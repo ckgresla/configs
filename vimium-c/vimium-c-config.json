@@ -25,6 +25,7 @@
 		"unmap /",
 		"unmap <a-m>",
 		"unmap b",
+		"unmap x",
 		""
 	],
 	"scrollStepSize": 300,
