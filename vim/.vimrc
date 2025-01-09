@@ -111,6 +111,9 @@ autocmd Syntax markdown syn match markdownIgnore "_"
 
 
 "" KeyBindings
+" change leader key  from backslash \ to space
+let mapleader = " "
+
 " shortcut to go to "middle" of a line (as seen in- https://superuser.com/questions/216411/go-to-middle-of-line-in-vim)
 map gm :call cursor(0, len(getline('.'))/2)<CR>
 
@@ -120,8 +123,8 @@ command! W write
 " remap ":Q" to ":q" -- no more nonsensical quitting mishaps
 command! Q quit
 
-
-
+" press 'fp' to print the filepath of current buffer's file
+nnoremap <leader>fp :echo expand('%:p')<CR>
 
 
 
