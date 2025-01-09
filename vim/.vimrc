@@ -29,6 +29,9 @@ set re=0  " updated REGEX engine, allows for opening typescript files without mo
 " when using netrw for viewing filesystems, use current dir as actual dir
 " see- https://stackoverflow.com/questions/28216075/vim-file-explorer-make-browsing-directory-the-current-directory
 let g:netrw_keepdir=0
+" generally, when using vim -- set the currdir to the dir of the file being edited
+" ref- https://stackoverflow.com/questions/2288756/how-to-set-working-current-directory-in-vim
+set autochdir
 
 
 " Highlight the current match (under cursor) when searching in vim
