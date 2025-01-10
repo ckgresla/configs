@@ -110,25 +110,23 @@ hi User0 guifg=#ffffff  guibg=#094afe
 autocmd Syntax markdown syn match markdownIgnore "_"
 
 
-"" KeyBindings
-" change leader key  from backslash \ to space
-let mapleader = " "
-
+"" Bindings
 " shortcut to go to "middle" of a line (as seen in- https://superuser.com/questions/216411/go-to-middle-of-line-in-vim)
 map gm :call cursor(0, len(getline('.'))/2)<CR>
-
 " remap ":W" to ":w" -- no more nonsensical saving mishaps
 command! W write
-
 " remap ":Q" to ":q" -- no more nonsensical quitting mishaps
 command! Q quit
 
+"" Follow the LEADER
+" change leader key  from backslash \ to space
+let mapleader = " "
 " press 'fp' to print the filepath of current buffer's file
-nnoremap <leader>fp :echo expand('%:p')<CR>
-
+nnoremap <leader>fp :echo expand('%:p')<CR> 
 " jump to file explorer
-nnoremap <leader>e :Ex<CR>
-
+nnoremap <leader>e :Ex<CR> 
+" quick issue of cmd in dir
+nnoremap <leader>x :! 
 
 
 " Plug-Ins 
