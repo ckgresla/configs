@@ -126,6 +126,9 @@ command! Q quit
 " press 'fp' to print the filepath of current buffer's file
 nnoremap <leader>fp :echo expand('%:p')<CR>
 
+" jump to file explorer
+nnoremap <leader>e :Ex<CR>
+
 
 
 " Plug-Ins 
