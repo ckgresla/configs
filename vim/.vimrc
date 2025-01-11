@@ -129,6 +129,9 @@ nnoremap <leader>e :Ex<CR>
 nnoremap <leader>x :! 
 " start a / search for string under cursor, that is we yank in word then search: '/WORD_YANKED'
 nnoremap <leader>/ yiw:let @/=@0<CR>n
+" open buffergator w leader b
+nnoremap <leader>b :BuffergatorToggle<CR>
+
 
 
 " Plug-Ins 
@@ -171,6 +174,10 @@ Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
 
 " Commentary- https://github.com/tpope/vim-commentary#installation
 Plug 'tpope/vim-commentary'  " comment things in/out
+
+" Buffergator- https://github.com/jeetsukumaran/vim-buffergator
+Plug 'jeetsukumaran/vim-buffergator'
+
 
 call plug#end()
 " End PlugIn Section -- all plugins are loaded in on end()
