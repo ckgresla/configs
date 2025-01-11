@@ -127,6 +127,8 @@ nnoremap <leader>fp :echo expand('%:p')<CR>
 nnoremap <leader>e :Ex<CR> 
 " quick issue of cmd in dir
 nnoremap <leader>x :! 
+" start a / search for string under cursor, that is we yank in word then search: '/WORD_YANKED'
+nnoremap <leader>/ yiw:let @/=@0<CR>n
 
 
 " Plug-Ins 
