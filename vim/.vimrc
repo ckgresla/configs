@@ -32,6 +32,12 @@ let g:netrw_keepdir=0
 " generally, when using vim -- set the currdir to the dir of the file being edited
 " ref- https://stackoverflow.com/questions/2288756/how-to-set-working-current-directory-in-vim
 set autochdir
+" force netrw to open splits/new buffers in same window
+let g:netrw_browse_split = 0
+" turn off default split bindings (vertical & horizontal, v OR o keys respectively) in netrw
+autocmd FileType netrw nmap <buffer> v <Nop>
+autocmd FileType netrw nmap <buffer> o <Nop>
+
 
 
 " Highlight the current match (under cursor) when searching in vim
