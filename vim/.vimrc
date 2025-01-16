@@ -7,6 +7,10 @@ set tabstop=4  " how many spaces is a single tab (\t) worth?
 set shiftwidth=4  " how many spaces is a single code indentation worth? 
 set expandtab " ~converts all tabs into equivalent number spaces -- never see a tab in a file again
 
+" show whitespace characters, only on empty lines, when not typing on a line
+set list
+set listchars=tab:▸\ ,trail:·,extends:>,precedes:<,nbsp:␣
+
 set autoindent
 
 syntax on  " Syntax highlighting
@@ -14,7 +18,9 @@ syntax on  " Syntax highlighting
 set showmatch  " Shows matching brackets
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta  " recoloring of brackets 
 
+set mouse=a  " whilst mice are rodents, sometimes you wanna scroll
 
+set nu  " display line numbers
 set ruler  " Always shows location in file (line#)
 set smarttab  " Autotabs for certain code
 set is hlsearch hls  " enable incremental & highlight search
@@ -90,7 +96,7 @@ colorscheme readability " custom theme made via online GUI
 set laststatus=2
 set statusline=
 set statusline+=%7*\[%n]                                  "buffernr
-set statusline+=%1*\ %<%F\                                "File+path
+set statusline+=%1*\ %<%t\                                "Filename
 set statusline+=%2*\ %y\                                  "FileType
 set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
 set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
@@ -135,8 +141,11 @@ nnoremap <leader>e :Ex<CR>
 nnoremap <leader>x :! 
 " start a / search for string under cursor, that is we yank in word then search: '/WORD_YANKED'
 nnoremap <leader>/ yiw:let @/=@0<CR>n
-" open buffergator w leader b
-nnoremap <leader>b :BuffergatorToggle<CR>
+" cmds for fzf
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fl :Lines<CR>
+
 
 
 
@@ -159,13 +168,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'  "a great tool for writing in Vim
 
 function! s:goyo_enter()
-	set linebreak
-	set spell spelllang=en_us
+    set linebreak
+    set spell spelllang=en_us
 endfunction
 
 function! s:goyo_leave()
-	set nolinebreak
-	set nospell
+    set nolinebreak
+    set nospell
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter() 
@@ -177,6 +186,11 @@ let g:goyo_width="80%"
 
 " Pear Tree- https://github.com/tmsvg/pear-tree
 Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
+
+" fzf- https://github.com/junegunn/fzf.vim
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Commentary- https://github.com/tpope/vim-commentary#installation
 Plug 'tpope/vim-commentary'  " comment things in/out
