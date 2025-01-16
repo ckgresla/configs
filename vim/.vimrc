@@ -35,6 +35,7 @@ set re=0  " updated REGEX engine, allows for opening typescript files without mo
 " when using netrw for viewing filesystems, use current dir as actual dir
 " see- https://stackoverflow.com/questions/28216075/vim-file-explorer-make-browsing-directory-the-current-directory
 let g:netrw_keepdir=0
+let g:netrw_liststyle=3
 " generally, when using vim -- set the currdir to the dir of the file being edited
 " ref- https://stackoverflow.com/questions/2288756/how-to-set-working-current-directory-in-vim
 set autochdir
@@ -187,10 +188,13 @@ let g:goyo_width="80%"
 " Pear Tree- https://github.com/tmsvg/pear-tree
 Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
 
-" fzf- https://github.com/junegunn/fzf.vim
+" fzf.vim- https://github.com/junegunn/fzf.vim
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" context.vim- https://github.com/wellle/context.vim
+Plug 'wellle/context.vim'
 
 " Commentary- https://github.com/tpope/vim-commentary#installation
 Plug 'tpope/vim-commentary'  " comment things in/out
