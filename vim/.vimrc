@@ -45,6 +45,15 @@ let g:netrw_browse_split = 0
 autocmd FileType netrw nmap <buffer> v <Nop>
 autocmd FileType netrw nmap <buffer> o <Nop>
 
+" persistent undo, thanks to- https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+        call mkdir($HOME."/.vim/undo-dir", "", 0700)
+    endif
+    set undodir=~/.vim/undo-dir
+    set undofile
 
 
 " Highlight the current match (under cursor) when searching in vim
@@ -138,6 +147,10 @@ let mapleader = " "
 nnoremap <leader>fp :echo expand('%:p')<CR> 
 " jump to file explorer
 nnoremap <leader>e :Ex<CR> 
+" delete current buffer
+nnoremap <leader>q :bd<CR>
+" toggle line numbers with leader key
+nnoremap <leader>n :set number!<CR>
 " quick issue of cmd in dir
 nnoremap <leader>x :! 
 " start a / search for string under cursor, that is we yank in word then search: '/WORD_YANKED'
@@ -146,6 +159,9 @@ nnoremap <leader>/ yiw:let @/=@0<CR>n
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fc :Commits<CR>
+nnoremap <leader>fg :GFiles?<CR>
+nnoremap <leader>fa :GFiles<CR>
 
 
 
