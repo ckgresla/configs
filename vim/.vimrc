@@ -44,6 +44,11 @@ let g:netrw_browse_split = 0
 " turn off default split bindings (vertical & horizontal, v OR o keys respectively) in netrw
 autocmd FileType netrw nmap <buffer> v <Nop>
 autocmd FileType netrw nmap <buffer> o <Nop>
+" Map 'l' to open a directory or file
+autocmd FileType netrw map <buffer> l <CR>
+" Map 'h' to go up a directory
+autocmd FileType netrw map <buffer> h -^
+
 
 " persistent undo, thanks to- https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile
 if !isdirectory($HOME."/.vim")
