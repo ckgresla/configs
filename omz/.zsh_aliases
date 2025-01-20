@@ -21,6 +21,7 @@ alias grc='GIT_EDITOR=true git rebase --continue'
 # screen
 alias scls="screen -ls"
 alias scx="screen -x"
+alias scd="screen -d"
 alias scS="screen -S"
 
 # python 
