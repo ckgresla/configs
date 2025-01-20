@@ -27,7 +27,12 @@ set is hlsearch hls  " enable incremental & highlight search
 set ignorecase  "ignore casing on word search (could also use "ic" instead of "ignorecase")
 set smartindent  "magic to smartly indent files
 set textwidth=0  "no newline insertion after N characters entered, taken from- https://stackoverflow.com/questions/40366496/how-to-stop-vim-from-putting-text-onto-a-new-line-after-80-characters
-set wrap
+
+set wrap          " Enable line wrapping
+set linebreak     " Wrap at word boundaries
+set breakindent   " Preserve indentation in wrapped text
+set shortmess-=S  " enumerate search examples for / and ?
+
 
 set re=0  " updated REGEX engine, allows for opening typescript files without molasses
 
@@ -160,14 +165,30 @@ nnoremap <leader>n :set number!<CR>
 nnoremap <leader>x :! 
 " start a / search for string under cursor, that is we yank in word then search: '/WORD_YANKED'
 nnoremap <leader>/ yiw:let @/=@0<CR>n
+
 " cmds for fzf
 nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>ff :Files<CR>
+" nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>fc :Commits<CR>
 nnoremap <leader>fg :GFiles?<CR>
-nnoremap <leader>fa :GFiles<CR>
 
+" ff ought find important files inside of git, an everything if outside a repo
+function! IsGitRepo()
+    return !empty(system('git rev-parse --is-inside-work-tree 2> /dev/null'))
+endfunction
+
+" Conditional mapping for ff
+function! FzfFilesOrGFiles()
+    if IsGitRepo()
+        execute 'GFiles'
+    else
+        execute 'Files'
+    endif
+endfunction
+
+" Bind ff to the conditional function
+nnoremap <leader>ff :call FzfFilesOrGFiles()<CR>
 
 
 
@@ -210,12 +231,15 @@ let g:goyo_width="80%"
 Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
 
 " fzf.vim- https://github.com/junegunn/fzf.vim
-call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" context.vim- https://github.com/wellle/context.vim
+" context.vim, pin @ level of symbols (prior class, fn, etc.) when scroll down
+" in long files- https://github.com/wellle/context.vim
 Plug 'wellle/context.vim'
+
+" auto-pairs, auto complete for paired chars- https://github.com/jiangmiao/auto-pairs
+Plug 'jiangmiao/auto-pairs'
 
 " Commentary- https://github.com/tpope/vim-commentary#installation
 Plug 'tpope/vim-commentary'  " comment things in/out
