@@ -227,6 +227,8 @@ autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif  "autores
 let g:goyo_height="100%"
 let g:goyo_width="80%"
 
+let g:fzf_layout = { 'window': { 'width': 0.85, 'height': 0.9 } }
+
 " Pear Tree- https://github.com/tmsvg/pear-tree
 Plug 'tmsvg/pear-tree'  "autocomplete for all brackets, paranethesis and stuff
 
