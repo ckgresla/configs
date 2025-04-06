@@ -11,7 +11,7 @@ family = "JetBrains Mono NL"
 [window]
 decorations = "buttonless"
 dynamic_padding = false
-title = "wizardry"
+title = "just a terminal"
 dynamic_title = false # whether or not to use current cmd as the window title
 
 [window.padding]
