@@ -1,3 +1,8 @@
 # ~/.config/ghostty/config
+# docs- https://ghostty.org/docs/config/reference
 theme = light:ckg-light.theme,dark:ckg-dark.theme
 macos-titlebar-style = tabs
+
+macos-icon = custom
+# some nice ghosts- https://github.com/lukejanicke/ghostty-app-icons/tree/main
+macos-custom-icon = ~/.config/ghostty/ghostty-white.icns
