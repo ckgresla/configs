@@ -7,8 +7,9 @@ alias cfgs="ranger ~/.config" # open ranger in the ".config" dir
 alias pub_ip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1"
 alias clock="tty-clock  -ScDt -C 7"      # get executable on MacOS w 'brew install tty-clock'
 
-alias mbms="make build && make start"
-alias ms="make start" 
+alias clauded="claude --dangerously-skip-permissions"      # a.g.i.
+alias mbms="make build && make start"   #keep this long command short
+alias ms="make start"
 alias mb="make build" 
 
 # git
