@@ -17,7 +17,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Voyager: æ (Option+Quote) to backtick",
+                        "description": "æ (Option+Quote) to backtick",
                         "manipulators": [
                             {
                                 "type": "basic",
@@ -35,18 +35,6 @@
                                 "to": [
                                     {
                                         "key_code": "grave_accent_and_tilde"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "device_if",
-                                        "identifiers": [
-                                            {
-                                                "vendor_id": 12951,
-                                                "product_id": 6519,
-                                                "is_keyboard": true
-                                            }
-                                        ]
                                     }
                                 ]
                             }
